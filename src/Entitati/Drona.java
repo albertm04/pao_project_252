@@ -2,39 +2,69 @@ package Entitati;
 
 import Utile.Status;
 
-
 public class Drona {
-    private String id;
-    private TipDrona tip;
-    private int oreZbor;
+    private int id;
+    private String nume;
     private Status status;
+    private double oreZbor;
+    private TipDrona tipDrona;
 
-    public Drona(String id, TipDrona tip) {
-        this.id = id;
-        this.tip = tip;
-        this.oreZbor = 0;
+    public Drona() {} // constructor gol pentru DAO
+
+    public Drona(String nume, TipDrona tipDrona) {
+        this.nume = nume;
+        this.tipDrona = tipDrona;
         this.status = Status.DISPONIBILA;
+        this.oreZbor = 0;
     }
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-
-    public TipDrona getTip() { return tip; }
-    public void setTip(TipDrona tip) { this.tip = tip; }
-
-    public int getOreZbor() { return oreZbor; }
-    public void adaugaOreZbor(int ore) {
-        if (ore > 0) {
-            this.oreZbor += ore;
-        }
+    // GETTERS & SETTERS
+    public void adaugaOreZbor(double ore) {
+        this.oreZbor += ore;
     }
 
-    public Status getStatus() { return status; }
-    public void setStatus(Status status) { this.status = status; }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNume() {
+        return nume;
+    }
+
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public double getOreZbor() {
+        return oreZbor;
+    }
+
+    public void setOreZbor(double oreZbor) {
+        this.oreZbor = oreZbor;
+    }
+
+    public TipDrona getTipDrona() {
+        return tipDrona;
+    }
+
+    public void setTipDrona(TipDrona tipDrona) {
+        this.tipDrona = tipDrona;
+    }
 
     @Override
     public String toString() {
-        return "Drona " + id + " [" + tip.getDenumire() + "], " +
-               "Ore: " + oreZbor + ", Status: " + status;
+        return nume + " | " + status + " | " + oreZbor + " ore | tip: " + tipDrona.getModel();
     }
 }

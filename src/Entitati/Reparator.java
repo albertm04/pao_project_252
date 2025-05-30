@@ -1,6 +1,6 @@
 package Entitati;
 
-
+// Clasa moștenită din Persoana
 public class Reparator extends Persoana {
     private String specializare;
 

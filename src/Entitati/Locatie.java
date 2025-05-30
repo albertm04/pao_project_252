@@ -1,6 +1,6 @@
 package Entitati;
 
-public class Locatie {
+public class  Locatie {
     private String nume;
     private double latitudine;
     private double longitudine;
